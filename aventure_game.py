@@ -1,6 +1,5 @@
 import time # to use time.sleep
 import random # to make a random function
-
 score = 0
 
 def validate_input(text,value,options):    #to check the input that comes from the user
@@ -9,18 +8,22 @@ def validate_input(text,value,options):    #to check the input that comes from t
         print("invalid input")
     return value
 
+
 def print_pause(text):   # to make pause to the text for some seconds
     print(text)
     time.sleep(1)
+
 
 def print_score():   # to make a score for the player
     global score
     print(f"your current score is {score}")
 
+
 def Scenario1 (weapon):    # to make a scenario
     beasts = ["Bear","2 Wolvies","Lion"]
     print_pause(
         "Youssef entered the forest and he know how it dangerous")
+
 
 def Scenario2 (weapon):    # to make a scenario
     print_pause(
@@ -93,10 +96,6 @@ def game():      # to make the game
     beast = random.choice(beasts)
 
     print_pause(f"Suddenly you see a {beast} in front of you...")
-
-    
-
-
     if beast == "Bear":
         dmg = 75
         if score > dmg:
@@ -121,13 +120,9 @@ def game():      # to make the game
         else:
             print("You dead...You lost the game")
             print_score()
-
-
     sc = random.choice([Scenario1,Scenario2])
 
     sc(weapon)
-
-
 game()
 
 print(f"your current score is {score}")
